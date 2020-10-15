@@ -15,6 +15,7 @@ $ clang++ shadertoy.cxx -DLINKED -DBANDS -o bands_linked -lGL -lgl3w -lglfw
 
 The modulation shader is corrupted when loaded from the linked.spv module. The bands shader isn't corrupted this time, but I also witnessed two-way corruption while preparing this bug report.
 
-[./modulation](modulation.png)
-[./modulation_linked](modulation_linked.png0
-[./bands](bands.png))
+![modulation](modulation.png)
+![modulation_linked](modulation_linked.png)
+![bands](bands.png)
+
