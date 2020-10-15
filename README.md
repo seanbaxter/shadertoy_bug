@@ -13,7 +13,7 @@ $ clang++ shadertoy.cxx -DLINKED -DMODULATION -o modulation_linked -lGL -lgl3w -
 $ clang++ shadertoy.cxx -DLINKED -DBANDS -o bands_linked -lGL -lgl3w -lglfw
 ```
 
-The modulation shader is corrupted when loaded from the linked.spv module. The bands shader isn't corrupted this time, but I also witnessed two-way corruption while preparing this bug report.
+Linking two SPIR-V modules results in an executable that renders incorrectly. The presence of a second fragment shader (bands) corrupts the fragment shader that actually gets specialized and linked (modulation). Each shader works fine indepently. The nvidia SPIR-V compiler incorrectly reads the modulation shader when it shares a module with the bands shader.
 
 **./modulation**
 ![modulation](modulation.png)
